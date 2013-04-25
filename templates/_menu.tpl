@@ -2,7 +2,8 @@
 
 <ul>
 	<li>
-		lil	
+		{if $nav == true}lil{/if}	
+		
 	</li>
 	<li {if $smarty.server.SCRIPT_NAME == '/index.php' }class="current"{/if}>&nbsp;<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/accueil">{#home_page#}</a></li>
 	<li {if $smarty.server.SCRIPT_NAME == '/collection.php' }class="current"{/if}>&nbsp;<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/collection/printemps-ete/2014">printemps-été 2014{*#collection#*}</a></li>

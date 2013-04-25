@@ -31,6 +31,12 @@
 	
 	
 	{config_load file=$country_conf section="header"}
+	
+	<div id="stickyHeader" style="display:block; visibility:hidden; position:fixed; width:100%; background:red; z-index:99999;">
+		
+		{include file="_menu.tpl" }
+	</div>
+	
 	<header id="header">
 		
 		<div id="content">
@@ -52,6 +58,7 @@
 		<div id="halo"></div>
 	</header>
 	
+
 	
 
 	<section>
@@ -76,13 +83,24 @@
 		//
 			var refPosition = $('#info').offset();	
 			$('#info').html(refPosition.top);		
+
+			if(refPosition.top >= 250) {
+				//$("#stickyHeader").show();
+				//$("#header").stop().css({top: '-180px', position: 'fixed'});
+				
+			} else {
+				//$("#stickyHeader").hide();	
+/* 					$("#header").stop().animate({top: '0px', position: 'relative'}); */
+			}
 			
+/*
 			if(refPosition.top >= 50) {
 				$("#header").stop().animate({top: '-160px'}, 900,  'easeOutCirc');
 				
 			} else {
 				$("#header").stop().animate({top: '0px'}, 900, 'easeOutCirc');
 			}
+*/
 
 		});
 			

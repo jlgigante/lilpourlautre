@@ -89,4 +89,5 @@ foreach($arg as $k=>$v) {
 	$argArray[$val[0]] = $val[1];
 }
 */
-
+$smarty->assign('nav', true);
+$nav = true;
