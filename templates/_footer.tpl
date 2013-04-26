@@ -55,8 +55,6 @@
 	
 	//
 	$("#form_professionnels").submit(function() {
-			alert(555);
-			return false;
 			//$("#retour").fadeOut(100).hide();
 			//
 			var code = $("#code");
@@ -73,7 +71,7 @@
 			//
 			$.ajax({
 			type: "POST",
-			url: baseUrl+"/index.php",
+			url: baseUrl+"/collection_pro.php",
 			data: {"nom":nom.val(), "prenom":prenom.val(), "email":email.val(), "telephone":telephone.val(), "entreprise":entreprise.val(), "message":message.val() },
 			// dataType : "json",
 			success: function(msg){
