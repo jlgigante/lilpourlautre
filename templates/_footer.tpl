@@ -50,11 +50,15 @@
 		
 		
 		<script type="text/javascript" charset="utf-8">
+		
+		var baseUrl = "{$smarty.const.BASE_URL}";
+		
 		{literal}
 		$( document ).ready(function() {
 	
 	//
 	$("#form_professionnels").submit(function() {
+			
 			//$("#retour").fadeOut(100).hide();
 			//
 			var code = $("#code");
@@ -68,11 +72,13 @@
 					.removeAttr('checked')
 					.removeAttr('selected').removeClass('input-err');
 			}
+			
+						
 			//
 			$.ajax({
 			type: "POST",
 			url: baseUrl+"/collection_pro.php",
-			data: {"nom":nom.val(), "prenom":prenom.val(), "email":email.val(), "telephone":telephone.val(), "entreprise":entreprise.val(), "message":message.val() },
+			data: {"code":code.val() },
 			// dataType : "json",
 			success: function(msg){
 				var doc = eval('(' + msg + ')');
