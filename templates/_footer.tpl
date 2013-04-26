@@ -4,7 +4,7 @@
 		<div id="content">
 			
 		
-			<div class="column">
+			<div class="column fb">
 				<h2>{#title_histoire#}</h2>
 				<p>
 					{#content_histoire#|nl2br|truncate:170:'...'} 
@@ -14,22 +14,24 @@
 			
 			<div class="column">
 				<h2>Professionnels</h2>
-				<p>
+				<p class="clearfix">
 					Pour accéder à la collection à venir, entrez le mot de passe.
 				</p>
+				
 				
 				<form action="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/collection_pro.php" method="post" accept-charset="utf-8" name="form_professionnels" id="form_professionnels">
 					<fieldset>
 						<legend>Professionnels form</legend>
-						<p>
+						
 							<label for="first">mot de passe: </label>
 							<input type="password" name="code" id="code" required="true"/>
-						</p>
+						
 					</fieldset>
-					<p>
-						<input type="submit" />
-					</p>
+					
+						<input type="submit" name="valider" id="valider" />
+					
 				</form>
+				<p><a href="">Vous n'avez pas encore de mot de passe ?</a></p>
 			</div>
 			
 			<div class="column">

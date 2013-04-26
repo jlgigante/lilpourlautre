@@ -6,8 +6,17 @@ require_once('include/config.php');
 
 //check identification
 
-if($_POST) {
-	var_dump($_POST);
+$param = $_POST;
+
+if( isset($param) and !empty($param) )
+{
+
+	define('CODE_RETOUR_VALIDE', '0');
+	define('CODE_RETOUR_ERREUR', '1');
+	
+	echo json_encode( array('code_retour' => CODE_RETOUR_ERREUR, 'message' => 'Remplir les champs obligatoires.', 'errors'  => $errors) );
+	exit;
+
 }
 
 
