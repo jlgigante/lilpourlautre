@@ -18,7 +18,7 @@
 -->
 	<li {if $smarty.server.SCRIPT_NAME == '/index.php' }class="current"{/if}>&nbsp;<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/accueil">{#home_page#}</a></li>
 	<li {if $smarty.server.SCRIPT_NAME == '/collection.php' or  $smarty.server.SCRIPT_NAME == '/collection_pro.php'  }class="current"{/if}>
-		&nbsp;<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/collection/{$confCollection.free.0.saison}/{$confCollection.free.0.annee}">collections{*#collection#|sprintf:'2014'*}</a>
+		&nbsp;<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/collection/{$confCollection.free.0.saison}/{$confCollection.free.0.annee}">collections{if isset($smarty.session.lpa_pro)} / Pro{/if}{*#collection#|sprintf:'2014'*}</a>
 		
 		<ul class="sub" style="">
 			{*menu free*}

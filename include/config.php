@@ -44,6 +44,10 @@ $confCollection = array( "free" => array( array("saison" => "printemps-ete", "an
 						  
 					);
 
+//echo json_encode($confCollection) ;
+
+
+
 $smarty->assign('confCollection', $confCollection);
 
 /*

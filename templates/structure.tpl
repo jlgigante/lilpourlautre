@@ -1,4 +1,7 @@
 {config_load file=$country_conf section="header"}
+{config_load file=$country_conf section="footer"}	
+{config_load file=$country_conf section="formulaire"}	
+
 <!DOCTYPE html>
 <html lang="">
 <head>
@@ -14,11 +17,11 @@
 		- {#title_collection#|capitalize} {$saison|capitalize} {$annee}
 	{elseif $smarty.server.SCRIPT_NAME == '/collection_pro.php'}
 		- {#title_collection#|capitalize} Professionnels {$saison|capitalize} {$annee}
+	{elseif $smarty.server.SCRIPT_NAME == '/professionnels.php'}
+		- {#title_pro#|capitalize}  
 	{/if}
 	</title>
 	
-
-
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="robots" content="" />

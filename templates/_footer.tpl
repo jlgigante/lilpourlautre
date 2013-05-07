@@ -1,6 +1,5 @@
-{config_load file=$country_conf section="menu"}
-{config_load file=$country_conf section="footer"}
 {config_load file=$country_conf section="histoire"}	
+
 		<div id="content">
 			
 		
@@ -9,13 +8,13 @@
 				<p>
 					{#content_histoire#|nl2br|truncate:170:'...'} 
 				</p>			
-				<p class="lire"><a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/histoire">Lire la suite</a></p>
+				<p class="lire"><a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/histoire">{#read_more#}</a></p>
 			</div>
 			
 			<div class="column">
-				<h2>Professionnels</h2>
+				<h2>{#title_pro#}</h2>
 				<p class="clearfix">
-					Pour accéder à la collection à venir, entrez le mot de passe.
+					{#content_pro#}
 				</p>
 				
 				
@@ -24,16 +23,16 @@
 						<legend>Professionnels form</legend>
 						
 							<label for="first">mot de passe: </label>
-							<input type="password" name="code" id="code" required="true"/>
+							<input type="password" name="code" id="code" required="true" placeholder="{#password#}" >
 							<input type="hidden" name="country_code" value="{$smarty.const.COUNTRY_CODE|escape}">
 						
 					</fieldset>
 					
-						<input type="submit" name="valider" id="valider" />
+						<input type="submit" name="valider" id="valider" value="{#submit#|capitalize}" />
 					
 				</form>
 				<p id="retour"></p>
-				<p><a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/pro">Vous n'avez pas encore de mot de passe ?</a></p>
+				<p><a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/pro">{#link_pro_get_pass#}</a></p>
 			</div>
 			
 			<div class="column">
@@ -41,8 +40,8 @@
 					Contacts
 				</h2>
 				<ul>
-					<li><a class="contacts" href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/contacts">{#contacts#}</a></li>
-					<li><a class="press" href="http://google.com">Presse</a></li>
+					<li><a class="contacts" href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/contacts">{#social_contacts#}</a></li>
+					<li><a class="press" href="http://google.com">{#social_press#}</a></li>
 					<li><a class="facebook" href="">Facebook</a></li>
 					<li><a class="twitter" href="">Twitter</a></li>
 				</ul>
@@ -55,6 +54,9 @@
 		
 		var baseUrl = "{$smarty.const.BASE_URL}";
 		
+ 		var messageErrorPassword = "{#message_error_password#}";
+ 		var messageValidePassword = "{#message_valide_password#}";
+		
 		{literal}
 		$( document ).ready(function() {
 	
@@ -64,6 +66,7 @@
 			//$("#retour").fadeOut(100).hide();
 			//
 			var code = $("#code");
+			var action = "access";
 			//
 			//code.removeClass('input-err');
 			//
@@ -73,31 +76,28 @@
 					.val('')
 					.removeAttr('checked')
 					.removeAttr('selected').removeClass('input-err');
-			}
-			
+			}			
 						
 			//
 			$.ajax({
 			type: "POST",
 			url: baseUrl+"/json_pro.php",
-			data: {"code":code.val() },
+			data: {"code":code.val(), "action":action },
 			// dataType : "json",
 			success: function(msg){
 				var doc = eval('(' + msg + ')');
 				if(doc.code_retour == 1) { //Erreur
-				
-					$("#retour").addClass('error').html(doc.message).fadeIn().delay(1500).fadeOut();
-					$.each(doc.errors, function(key, value){
+					$("#retour").addClass('error').html(messageErrorPassword).fadeIn();
+					
+					/*
+$.each(doc.errors, function(key, value){
 						var inputId = '#'+key;
 						$(inputId).addClass('input-err');
-					});					
+					});
+*/					
 				}
 				else if (doc.code_retour == 0){ //valide
-					
-					//$("#retour").addClass('valid').html('Merci').fadeIn().delay(1500).fadeOut();
-					//effacerForm("#form-contact");
-					// On redirige vers la collections pro
-					
+					$("#retour").removeClass('error').addClass('confirmation').html(messageValidePassword).fadeIn();
 					window.location = doc.redirect; 
 				}
 			},
