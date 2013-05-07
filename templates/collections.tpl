@@ -3,8 +3,8 @@
 
 {block name="section"}
 
-	<div id="content">
-		
+	<div id="content" class="collection">
+	{config_load file=$collection_conf section="collection"}
 
 	<h1>Title : {#title_collection#}</h1>
 	
@@ -19,33 +19,15 @@
 		
 		{foreach from=$arrayCollectionImg key=id item=imgFile}
 		
-			<li style="width:50%; display:inline; float:left; background:black;">
-			
-				<div id="" style=" width:100%;  background:red; ">
+			<li class="produit">
+								
+						<div class="visuel-details">
+							<img id="img-{$id}" src="{$smarty.const.BASE_URL}/img/grey.gif" data-original="{$imgFile.url}" alt="" title=""  style="width: 100%; heigth: auto; max-width:401px; image-rendering: optimizequality; display:block; margin:0 auto;" />
+							<p>
+								{#$imgFile.id#|nl2br}
+							</p>
+						</div>
 					
-					
-			
-					<img id="img-{$id}" src="{$smarty.const.BASE_URL}/img/grey.gif" data-original="{$imgFile.url}" alt="" title=""  style="width: 90%; heigth: auto; max-width:401px; image-rendering: optimizequality; display:block; margin:0 auto;" />
-					<p {* style=" bottom: 25px; position: absolute; right: 50px; text-align: right; opacity:0.5; " *}>infos produits</p>
-					
-					 <script type="text/javascript" charset="utf-8">
-					$( document ).ready(function() {	
-/* 						console.log("ready!"); */
-						var pic = $("#img-{$id}");
-						
-						pic.removeAttr("width");
-						pic.removeAttr("height");
-						
-						console.log( pic.width() );		
-						console.log( pic.height() );					
-						
-						
-						
-						
-					});
-					</script>
-					
-				</div>
 			</li>
 			
 		<!--
@@ -56,7 +38,22 @@
   		position: relative;
   		width: 90%;
 -->
-				
+		 <script type="text/javascript" charset="utf-8">
+					$( document ).ready(function() {	
+/* 						console.log("ready!"); */
+						var pic = $("#img-{$id}");
+						
+						pic.removeAttr("width");
+						pic.removeAttr("height");
+						
+						//console.log( pic.width() );		
+						//console.log( pic.height() );					
+						
+						
+						
+						
+					});
+					</script>
 
 		{/foreach}
 		

@@ -25,13 +25,15 @@
 						
 							<label for="first">mot de passe: </label>
 							<input type="password" name="code" id="code" required="true"/>
+							<input type="hidden" name="country_code" value="{$smarty.const.COUNTRY_CODE|escape}">
 						
 					</fieldset>
 					
 						<input type="submit" name="valider" id="valider" />
 					
 				</form>
-				<p><a href="">Vous n'avez pas encore de mot de passe ?</a></p>
+				<p id="retour"></p>
+				<p><a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/pro">Vous n'avez pas encore de mot de passe ?</a></p>
 			</div>
 			
 			<div class="column">
@@ -77,12 +79,13 @@
 			//
 			$.ajax({
 			type: "POST",
-			url: baseUrl+"/collection_pro.php",
+			url: baseUrl+"/json_pro.php",
 			data: {"code":code.val() },
 			// dataType : "json",
 			success: function(msg){
 				var doc = eval('(' + msg + ')');
 				if(doc.code_retour == 1) { //Erreur
+				
 					$("#retour").addClass('error').html(doc.message).fadeIn().delay(1500).fadeOut();
 					$.each(doc.errors, function(key, value){
 						var inputId = '#'+key;
@@ -90,8 +93,12 @@
 					});					
 				}
 				else if (doc.code_retour == 0){ //valide
-					$("#retour").addClass('valid').html('Merci').fadeIn().delay(1500).fadeOut();
-					effacerForm("#form-contact");
+					
+					//$("#retour").addClass('valid').html('Merci').fadeIn().delay(1500).fadeOut();
+					//effacerForm("#form-contact");
+					// On redirige vers la collections pro
+					
+					window.location = doc.redirect; 
 				}
 			},
 			error: function(){

@@ -6,6 +6,10 @@ require_once('include/config.php');
 
 //check identification
 
+
+
+
+
 if($_POST) {
 	var_dump($_POST);
 }

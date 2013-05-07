@@ -14,7 +14,7 @@
 	demande de mot de passe
 	{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/pro
 	
-	<form action="" method="post" name="form_mdp">
+	<form action="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/pro" method="post" name="form_mdp">
 		<fieldset>
 			<legend>Form Name</legend>
 			<p>
@@ -27,6 +27,11 @@
 			<input type="submit" />
 		</p>
 	</form>
+	
+	
+	
+	
+	
 	
 	</div>	
 	

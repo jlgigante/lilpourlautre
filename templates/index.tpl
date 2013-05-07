@@ -11,6 +11,11 @@
 			<p>{#mea_line_3#}</p>
 		</h1>
 		
+		<div>
+			<p>
+				<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/collection/printemps-ete/2014">{#lien_collection#}</a>
+			</p>
+		</div>	
 		
 	</div>
 	

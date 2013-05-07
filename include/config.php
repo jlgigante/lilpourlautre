@@ -29,7 +29,22 @@ define('COUNTRY_CODE',  $param['lang'] ) ;
 
 //var_dump($param);
 
+session_start();
 
+
+//Conf collection
+
+
+$confCollection = array( "free" => array( array("saison" => "printemps-ete", "annee" => "2014"),
+										  array("saison" => "automne-hiver", "annee" => "2013"),
+										 ),
+						 "pro" => array( array("saison" => "automne-hiver", "annee" => "2015"),
+						 			     array("saison" => "printemps-ete", "annee" => "2013"),
+						 			   ),
+						  
+					);
+
+$smarty->assign('confCollection', $confCollection);
 
 /*
 $Langue = explode(',',$_SERVER['HTTP_ACCEPT_LANGUAGE']);
@@ -69,6 +84,8 @@ if( $_SERVER["SERVER_PORT"] == "8888") {
 
 $baseUrl = "http://".$_SERVER["SERVER_NAME"].$serverProt;
 $currentUrl = $baseUrl.$_SERVER["REQUEST_URI"];
+
+
 
 define("BASE_URL", $baseUrl);
 define("CURRENT_URL", $currentUrl);

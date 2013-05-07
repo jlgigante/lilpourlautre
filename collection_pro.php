@@ -1,84 +1,46 @@
 <?php
 require_once('include/config.php');
-
+include("include/Utils.class.php");
 
 //var_dump($_SERVER);
 
-//check identification
 
-$param = $_POST;
-var_dump($_POST);
-if( isset($param) and !empty($param) )
-{
 
+
+include("include/Collection.class.php");
+
+
+//
+
+$collection = new Collection();
+
+try {
+
+	if ( $collection->isProConnected() === false) {
+		//redirege vers la page pro
+		header("location:" . BASE_URL . "/" . COUNTRY_CODE . "/pro");
+	}
+	//var_dump( $collection->isProConnected() );
+
+
+	$collection->setSaison( $_GET['saison']);
+	$collection->setAnnee( $_GET['annee'] );	
+	$collection->setBaseUrl( BASE_URL );
+
+	$smarty->assign("saison", $collection->getSaison());	
+	$smarty->assign("annee", $collection->getAnnee());
 	
-
-	define('CODE_RETOUR_VALIDE', '0');
-	define('CODE_RETOUR_ERREUR', '1');
+/* 	var_dump($collection->getCollectionImg("pro")); */
 	
-	echo json_encode( array('code_retour' => CODE_RETOUR_ERREUR, 'message' => 'Remplir les champs obligatoires.', 'errors'  => $errors) );
-	exit;
+	$smarty->assign("arrayCollectionImg", $collection->getCollectionImg("pro"));	
+	$smarty->assign("collection_conf", "collection-" . $_GET['saison'] . "-" . $_GET['annee'] . ".conf");	
+}
+catch (Exception $e) {
 
+	//var_dump( $e->getMessage() );
+	Utils::get404($smarty);
 }
 
-
-
-$arrayCollection = array(
-				"printemps-ete", 
-				"automne-hiver",
-);
-
-if ( isset($_GET['saison']) ) {
-
-
-
-	if ( !in_array($_GET['saison'], $arrayCollection) ) {
-		Utils::get404($smarty);
-	}
-
-
-
-
-	//check
-	$collectionBaseDir = "img/collections/pro/".$_GET['saison']."/".$_GET['annee']."/";
-	$arrayCollectionImg = array();
-	
-	if( @$collection = opendir($collectionBaseDir) ) {
-		$i = 0;
-		//on construie la liste des images
-		while(false !== ($fichier = readdir($collection)))
-		{	
-			if($fichier != '.' && $fichier != '..' && $fichier != '.DS_Store' && $fichier != 'index.php' && $fichier != 'Icon')
-			{
-				//$arrayCollectionImg['id'] = $i;
-				
-				
-				
-				$arrayCollectionImg[$i]['url'] = BASE_URL."/".$collectionBaseDir.$fichier;
-				
-				list($width, $height, $type, $attr) = getimagesize($arrayCollectionImg[$i]["url"]);
-				
-				$arrayCollectionImg[$i]['width'] = $width;
-				$arrayCollectionImg[$i]['height'] = $height;
-				
-				$i++;
-			}
-			
-		}
-		
-	
-		//var_dump($arrayCollectionImg);
-		//die();
-		
-		//on envoie l'url de la collection
-		$smarty->assign("arrayCollectionImg", $arrayCollectionImg);
-		
-	} else {
-		//die("KO");
-		Utils::get404($smarty);
-	}
-
-}
 
 
 $smarty->assign("title", "Collection PRO");

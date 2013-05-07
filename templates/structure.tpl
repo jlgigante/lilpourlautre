@@ -1,12 +1,28 @@
-
+{config_load file=$country_conf section="header"}
 <!DOCTYPE html>
 <html lang="">
 <head>
 	<meta charset="utf-8">
-	<title>{$smarty.const.SITE_NAME} - {#title#}</title>
+	<title>{$smarty.const.SITE_NAME}
+	{if $smarty.server.SCRIPT_NAME == '/boutique.php' }
+		- {#title_store#|capitalize}
+	{elseif $smarty.server.SCRIPT_NAME == '/contacts.php' }
+		- {#title_contacts#|capitalize}
+	{elseif $smarty.server.SCRIPT_NAME == '/histoire.php' }
+		- {#title_story#|capitalize}
+	{elseif $smarty.server.SCRIPT_NAME == '/collection.php' }
+		- {#title_collection#|capitalize} {$saison|capitalize} {$annee}
+	{elseif $smarty.server.SCRIPT_NAME == '/collection_pro.php'}
+		- {#title_collection#|capitalize} Professionnels {$saison|capitalize} {$annee}
+	{/if}
+	</title>
+	
+
+
 	<meta name="description" content="" />
 	<meta name="keywords" content="" />
 	<meta name="robots" content="" />
+	<meta name="viewport" content="width=device-width">
 	
 <!-- 	<link href="../css/main.css" media="screen" rel="stylesheet" type="text/css" /> -->
 	
@@ -24,13 +40,13 @@
 
 		</div>
 -->
-	<div id="info" style=" position:fixed; z-index:99999; display:;">ddd
+	<div id="info" style=" position:fixed; z-index:99999; display:;">0
 	</div>
 	
 
 	
 	
-	{config_load file=$country_conf section="header"}
+	
 	
 	<div id="stickyHeader" style="display:block; visibility:hidden; position:fixed; width:100%; background:red; z-index:99999;">
 		
