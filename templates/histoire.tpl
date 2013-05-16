@@ -9,13 +9,13 @@
 		<div>
 			
 		
-		<h1>{#title_histoire#}</h1>
-		
-		<br/>
-		
-		<p>
-			{#content_histoire#}
-		</p>
+			<h1>{#title_histoire#}</h1>
+			
+			<br/>
+			
+			<p>
+				{#content_histoire#}
+			</p>
 		
 		</div>
 		

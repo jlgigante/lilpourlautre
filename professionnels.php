@@ -8,16 +8,60 @@ require_once('include/config.php');
 
 
 
-
-
 if($_POST) {
 	var_dump($_POST);
 	
+	$var = "";
+	
+	//echo $var==TRUE ? 'TRUE' : 'FALSE';
+	
+	$name = filter_var($_POST["name"], FILTER_SANITIZE_SPECIAL_CHARS);
+	$firstname = filter_var($_POST["firstname"], FILTER_SANITIZE_SPECIAL_CHARS);
+	$email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+	
+	$formValues = array(
+						"name" => $name,
+						"firstname" => $firstname,
+						"email" => $email,
+				);
 	
 	
-	echo $var==TRUE ? 'TRUE' : 'FALSE';
 	
+	$errors = array();
+	$errors["name"] = empty($name) ? "erreur nom" : false;
+	$errors["firstname"] = empty($firstname) ? "erreur prenom" : false;
+	$errors["email"] =  !filter_var($email, FILTER_VALIDATE_EMAIL) ? "erreur email" : false;
+	//
+	foreach($errors as $key=>$val)
+	{
+		if ($val == false) unset($errors[$key]);
+	}
+	
+	if( !empty($errors) ) {
+		$smarty->assign("errors", $errors);
+		$smarty->assign("formValues", $formValues);			
+	}
+	else {
+		//$to      = 'contact@troisw-agenceweb.com';
+		$subject = "LiL pour l'autre - demande de code ";
+		$message = 'Bonjour !';
+		$headers = 'From: '.EMAIL_CONTACT."\r\n" .
+					'Reply-To: '.$param['email'] . "\r\n" .
+					'X-Mailer: PHP/' . phpversion();
+	
+		$message = "
+					nom : ".$param['nom']." \r\n
+					prenom : ".$param['prenom']." \r\n
+					email :  ".$param['email']." \r\n
+					telephone :  ".$param['telephone']." \r\n
+					entreprise :  ".$param['entreprise']." \r\n
+					message :  ".$param['message'];
+		
+		     mail(EMAIL_CONTACT, $subject, $message, $headers);	
+	}
 }
+
+
 
 
 if( isset($param["code"])  )

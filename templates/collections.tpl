@@ -21,8 +21,8 @@
 		
 			<li class="produit">
 								
-						<div class="visuel-details">
-							<img id="img-{$id}" src="{$smarty.const.BASE_URL}/img/grey.gif" data-original="{$imgFile.url}" alt="" title=""  style="width: 100%; heigth: auto; max-width:401px; image-rendering: optimizequality; display:block; margin:0 auto;" />
+						<div>
+							<img id="img-{$id}" src="{$smarty.const.BASE_URL}/img/grey.gif" data-original="{$imgFile.url}" alt="{#$imgFile.id#|nl2br}" title=""  class="visuel" />
 							<p>
 								{#$imgFile.id#|nl2br}
 							</p>

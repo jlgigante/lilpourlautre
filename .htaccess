@@ -333,38 +333,45 @@ FileETag None
   Options +FollowSymlinks
 # Options +SymLinksIfOwnerMatch
   RewriteEngine On
-  DirectoryIndex index.php
+  
+  
+  
+
+# RewriteCond %{SERVER_NAME} ^projets.troisw-agenceweb.com$
+#  RewriteBase /lilpourlautre/site/
+# RewriteRule . - [E=REWRITEBASE:/lilpourlautre/site/]
+# DirectoryIndex /lilpourlautre/site/index.php
+# RewriteRule ^([a-z]{2,2})/404$ 404.php?lang=$1 [QSA,L]
+# RewriteRule ^([a-z]{2,2})/accueil$ index.php?lang=$1&page=$2 [QSA,L]
+# RewriteRule ^([a-z]{2,2})/$ index.php?lang=$1&page=$2 [QSA,L]
+# RewriteRule ^([a-z]{2,2})/boutique$ boutique.php?lang=$1&page=$2 [QSA]
+# RewriteRule ^([a-z]{2,2})/collection/([a-z\-]+)/([0-9]{4,4})$ collection.php?lang=$1&saison=$2&annee=$3 [QSA]
+# RewriteRule ^([a-z]{2,2})/collection/pro/([a-z\-]+)/([0-9]{4,4})$ collection_pro.php?lang=$1&saison=$2&annee=$3 [QSA]
+# RewriteRule ^([a-z]{2,2})/pro$ professionnels.php?lang=$1 [QSA]  
+# RewriteRule ^([a-z]{2,2})/contacts$ contacts.php?lang=$1&page=$2 [QSA]
+# RewriteRule ^([a-z]{2,2})/histoire$ histoire.php?lang=$1&page=$2 [QSA]  
 
 
+
+ RewriteCond %{SERVER_NAME} ^lilpourlautre.loc$ 
+ DirectoryIndex /index.php
  RewriteBase /
- 
-  RewriteRule ^([a-z]{2,2})/404$ 404.php?lang=$1 [QSA,L]
- 
-# RewriteRule ^([a-z]{2,2})/([a-z]*) $2.php?lang=$1&page=$2 [QSA,L]
+ RewriteRule ^([a-z]{2,2})/404$ /404.php?lang=$1 [QSA,L]
+ RewriteRule ^([a-z]{2,2})/accueil$ /index.php?lang=$1&page=$2 [QSA,L]
+ RewriteRule ^([a-z]{2,2})/$ /index.php?lang=$1&page=$2 [QSA,L]
+ RewriteRule ^([a-z]{2,2})/boutique$ /boutique.php?lang=$1&page=$2 [QSA]
+ RewriteRule ^([a-z]{2,2})/collection/([a-z\-]+)/([0-9]{4,4})$ /collection.php?lang=$1&saison=$2&annee=$3 [QSA]
+ RewriteRule ^([a-z]{2,2})/collection/pro/([a-z\-]+)/([0-9]{4,4})$ /collection_pro.php?lang=$1&saison=$2&annee=$3 [QSA]
+ RewriteRule ^([a-z]{2,2})/pro$ /professionnels.php?lang=$1 [QSA]  
+ RewriteRule ^([a-z]{2,2})/contacts$ /contacts.php?lang=$1&page=$2 [QSA]
+ RewriteRule ^([a-z]{2,2})/histoire$ /histoire.php?lang=$1&page=$2 [QSA]
 
-  RewriteRule ^([a-z]{2,2})/accueil$ index.php?lang=$1&page=$2 [QSA,L]
-  RewriteRule ^([a-z]{2,2})/$ index.php?lang=$1&page=$2 [QSA,L]
-  
-#  RewriteRule ^([a-z]{2,2})/(home) index.php?lang=$1&page=$2 [QSA,L]
-  
-  RewriteRule ^([a-z]{2,2})/boutique$ boutique.php?lang=$1&page=$2 [QSA]
-#  RewriteRule ^([a-z]{2,2})/(store) boutique.php?lang=$1&page=$2 [QSA]
-  
-  RewriteRule ^([a-z]{2,2})/collection/([a-z\-]+)/([0-9]{4,4})$ collection.php?lang=$1&saison=$2&annee=$3 [QSA]
-  RewriteRule ^([a-z]{2,2})/collection/pro/([a-z\-]+)/([0-9]{4,4})$ collection_pro.php?lang=$1&saison=$2&annee=$3 [QSA]
-  
-  RewriteRule ^([a-z]{2,2})/pro$ professionnels.php?lang=$1 [QSA]
-  
-  
- # RewriteRule ^([a-z]{2,2})/(collection) collection.php?lang=$1&page=$2 [QSA]
-  
-  RewriteRule ^([a-z]{2,2})/contacts$ contacts.php?lang=$1&page=$2 [QSA]
-  RewriteRule ^([a-z]{2,2})/histoire$ histoire.php?lang=$1&page=$2 [QSA]
+
+
 
  
-# RewriteRule ^([a-z]{2,2})/structure structure.php?lang=$1&page=$2 [QSA]  
 
-</IfModule>
+ </IfModule>
 
 
 # ----------------------------------------------------------------------
@@ -486,6 +493,7 @@ AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
 # includes rather private places like CMS system folders).
 <IfModule mod_autoindex.c>
   Options -Indexes
+
 </IfModule>
 
 # Block access to "hidden" directories or files whose names begin with a
@@ -500,7 +508,7 @@ AddCharset utf-8 .atom .css .js .json .rss .vtt .xml
 # Block access to backup and source files. These files may be left by some
 # text/html editors and pose a great security danger, when anyone can access
 # them.
-<FilesMatch "(\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist)|~)$">
+<FilesMatch "(\.(bak|config|sql|fla|psd|ini|log|sh|inc|swp|dist|tpl)|~)$">
   Order allow,deny
   Deny from all
   Satisfy All

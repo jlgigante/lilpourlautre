@@ -2,8 +2,7 @@
 
 		<div id="content">
 			
-		
-			<div class="column fb">
+			<div class="column">
 				<h2>{#title_histoire#}</h2>
 				<p>
 					{#content_histoire#|nl2br|truncate:170:'...'} 
@@ -36,7 +35,7 @@
 			</div>
 			
 			<div class="column">
-				<h2 class="hidden">
+				<h2>
 					Contacts
 				</h2>
 				<ul>

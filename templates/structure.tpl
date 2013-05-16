@@ -98,6 +98,7 @@
 		$( document ).ready(function() {
 			
 			
+
 			$(document).scroll(function(){
 		//
 			var refPosition = $('#info').offset();	

@@ -20,19 +20,20 @@ demande de mot de passe
 -->
 	
 			<form action="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/pro" method="post" name="form_get_code">
+			
 				<fieldset>
 					<legend>Form Name</legend>
 					<p>
 						<label for="first">{#name#}</label>
-						<input type="text" name="nom" id="nom" placeholder="{#name#}" required="true" >
+						<input type="text" name="name" id="name" placeholder="{#name#}" value="{if isset($formValues.name)}{$formValues.name}{/if}" {if isset($errors.name) }class="form-error"{/if} >
 					</p>
 					<p>
 						<label for="first">{#firstname#}</label>
-						<input type="text" name="prenom" id="prenom" placeholder="{#firstname#}" required="true">
+						<input type="text" name="firstname" id="firstname" placeholder="{#firstname#}" value="{if isset($formValues.firstname)}{$formValues.firstname}{/if}" {if isset($errors.firstname) }class="form-error"{/if}>
 					</p>
 					<p>
 						<label for="first">{#email#}</label>
-						<input type="email" name="email" id="email" placeholder="{#email#}"  required="true">
+						<input type="text" name="email" id="email" placeholder="{#email#}"  value="{if isset($formValues.email)}{$formValues.email}{/if}"  {if isset($errors.email) }class="form-error"{/if}>
 						<input type="submit" name="valider" style="float:right;" value="{#submit#}"/>
 					</p>
 				</fieldset>

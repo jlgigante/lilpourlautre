@@ -160,7 +160,8 @@ class Collection {
 					//var_dump(explode(".", $fichier));
 
 					//var_dump($fichier);
-					
+					//var_dump($_SERVER['DOCUMENT_ROOT'] . "/" . self::getDirCollection() . $fichier);
+						
 					$arrayCollectionImg[$i]['url'] = self::getBaseUrl() ."/" . self::getDirCollection().$fichier;
 			
 			
@@ -169,7 +170,7 @@ class Collection {
 			
 					$arrayCollectionImg[$i]['id'] = 'prod'.$nomFichier[0];
 			
-					list($width, $height, $type, $attr) = getimagesize($arrayCollectionImg[$i]["url"]);
+					list($width, $height, $type, $attr) = getimagesize($_SERVER['DOCUMENT_ROOT'] . "/" . self::getDirCollection() . $fichier);
 			
 					$arrayCollectionImg[$i]['width'] = $width;
 					$arrayCollectionImg[$i]['height'] = $height;

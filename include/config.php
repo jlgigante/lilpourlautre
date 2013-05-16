@@ -3,10 +3,8 @@
  * Fichier de config
  */
 
-/*
-phpinfo();
-var_dump($_SERVER);
-*/
+//phpinfo();
+/* var_dump($_SERVER); */
 
 define("SITE_NAME", "LiL pour l'autre");
 
@@ -18,6 +16,9 @@ $param = $_GET;
 //var_dump($_GET);
 
 $lang_authorized = array("fr", "en");
+
+define("EMAIL_CONTACT", "jlg@jlgigante.fr");
+
 
 if( @!$param['lang'] && @!in_array($param['lang'], $lang_authorized) ) {
 	//die("DDd");
@@ -44,7 +45,22 @@ $confCollection = array( "free" => array( array("saison" => "printemps-ete", "an
 						  
 					);
 
-//echo json_encode($confCollection) ;
+/* echo json_encode($confCollection); */
+
+/*
+{
+	"free":
+	[
+		{"saison":"printemps-ete","annee":"2014"},
+		{"saison":"automne-hiver","annee":"2013"}
+	],
+	"pro":
+	[
+		{"saison":"automne-hiver","annee":"2015"},
+		{"saison":"printemps-ete","annee":"2013"}
+	]
+}
+*/
 
 
 
@@ -81,14 +97,26 @@ if( !in_array($country_code, $lang_authorized) ) {
 
 //URL
 
-$serverProt = "";
-if( $_SERVER["SERVER_PORT"] == "8888") {
-	$serverProt = ":".$_SERVER["SERVER_PORT"];
+
+
+
+if( $_SERVER["SERVER_NAME"] == 'lilpourlautre.loc' ) {
+	
+	$serverProt = "";
+	if( $_SERVER["SERVER_PORT"] == "8888") {
+		$serverProt = ":".$_SERVER["SERVER_PORT"];
+	}
+	
+	$baseUrl = "http://".$_SERVER["SERVER_NAME"].$serverProt;
+	$currentUrl = $baseUrl.$_SERVER["REQUEST_URI"];
+
 }
-
-$baseUrl = "http://".$_SERVER["SERVER_NAME"].$serverProt;
-$currentUrl = $baseUrl.$_SERVER["REQUEST_URI"];
-
+else {
+	$baseUrl = "http://projets.troisw-agenceweb.com/lilpourlautre/site";
+	$currentUrl = $baseUrl.$_SERVER["REQUEST_URI"];
+/* 	http://projets.troisw-agenceweb.com/lilpourlautre/site/ */
+	$_SERVER['DOCUMENT_ROOT'] = $_SERVER['DOCUMENT_ROOT'] . "/lilpourlautre/site";
+}
 
 
 define("BASE_URL", $baseUrl);
