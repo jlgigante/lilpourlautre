@@ -16,7 +16,7 @@
 		<ul class="sub" style="">
 			{*menu free*}
 			{foreach from=$confCollection.free key=k item=i}
-				<li><a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/collection/{$i.saison}/{$i.annee}" {if $smarty.server.REQUEST_URI == "/{$smarty.const.COUNTRY_CODE}/collection/{$i.saison}/{$i.annee}" }class="sub-current"{/if}>{$i.saison} {$i.annee}{*#collection#*}</a></li>
+				<li><a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/collection/{$i.saison}/{$i.annee}" {if $smarty.server.REQUEST_URI == "/{$smarty.const.COUNTRY_CODE}/collection/{$i.saison}/{$i.annee}" }class="sub-current"{/if}>{$i.libel} </a></li>
 			{/foreach}	
 			
 <!--

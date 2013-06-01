@@ -36,14 +36,40 @@ session_start();
 //Conf collection
 
 
-$confCollection = array( "free" => array( array("saison" => "printemps-ete", "annee" => "2014"),
-										  array("saison" => "automne-hiver", "annee" => "2013"),
+$confCollection = array( "free" => array( 
+										array(
+												"type" => "lookbook",
+												"saison" => "printemps-ete", 
+												"annee" => "2013", 
+												"libel" => "Lookbook Printemps-ete 2013"),
+										array(
+												"type" => "lookbook",
+												"saison" => "automne-hiver", 
+												"annee" => "2013", 
+												"libel" => "Lookbook Automne-hiver 2103-14"),									
+										array(
+												"type" => "pressbook",
+												"saison" => "automne-hiver", 
+												"annee" => "2013", 
+												"libel" => "Pressbook Automne-hiver 2103-14"),
 										 ),
+										  
 						 "pro" => array( array("saison" => "automne-hiver", "annee" => "2015"),
 						 			     array("saison" => "printemps-ete", "annee" => "2013"),
 						 			   ),
 						  
 					);
+					
+					
+$array = array("free" => array(
+								0 => array(
+											"lien" => "",
+											"libel" => "" 
+											),
+								1 => array()
+								),
+
+				);
 
 /* echo json_encode($confCollection); */
 

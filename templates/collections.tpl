@@ -22,7 +22,7 @@
 			<li class="produit">
 								
 						<div>
-							<img id="img-{$id}" src="{$smarty.const.BASE_URL}/img/grey.gif" data-original="{$imgFile.url}" alt="{#$imgFile.id#|nl2br}" title=""  class="visuel" />
+							<img id="prod0{$id}" src="{$smarty.const.BASE_URL}/img/grey.gif" data-original="{$imgFile.url}" alt="{#$imgFile.id#|nl2br}" title=""  class="visuel" />
 							<p>
 								{#$imgFile.id#|nl2br}
 							</p>
