@@ -16,7 +16,7 @@
 		<ul class="sub" style="">
 			{*menu free*}
 			{foreach from=$confCollection.free key=k item=i}
-				<li><a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/collection/{$i.saison}/{$i.annee}" {if $smarty.server.REQUEST_URI == "/{$smarty.const.COUNTRY_CODE}/collection/{$i.saison}/{$i.annee}" }class="sub-current"{/if}>{$i.libel} </a></li>
+				<li><a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/{$i.type}/{$i.saison}/{$i.annee}" {if $smarty.server.REQUEST_URI == "/{$smarty.const.COUNTRY_CODE}/{$i.type}/{$i.saison}/{$i.annee}" }class="sub-current"{/if}>{$i.libel} </a></li>
 			{/foreach}	
 			
 <!--
@@ -54,10 +54,13 @@
 	<optgroup label="collections">
 	
 		{foreach from=$confCollection.free key=k item=i}
-			<option value="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/collection/{$i.saison}/{$i.annee}" {if $smarty.server.REQUEST_URI == "/{$smarty.const.COUNTRY_CODE}/collection/{$i.saison}/{$i.annee}" }selected{/if}>
-				{$i.saison} {$i.annee}{*#collection#*}
+			<option value="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/{$i.type}/{$i.saison}/{$i.annee}" {if $smarty.server.REQUEST_URI == "/{$smarty.const.COUNTRY_CODE}/collection/{$i.saison}/{$i.annee}" }selected{/if}>
+				{$i.libel}{*#collection#*}
 			</option>
 		{/foreach}	
+			
+		
+		
 	</optgroup>
 	
 	<option value="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/histoire" {if $smarty.server.SCRIPT_NAME == '/histoire.php' }selected{/if}>

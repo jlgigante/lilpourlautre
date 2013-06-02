@@ -8,6 +8,7 @@
 
 define("SITE_NAME", "LiL pour l'autre");
 
+/* error_reporting('E_ALL'); */
 //
 include("include/smarty_conf.php");
 

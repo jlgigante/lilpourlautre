@@ -9,13 +9,14 @@ class Collection {
 	
 	private $annee; 
 	private $saison; 
-	
+	private $type;
 	private $baseUrl;
 	
 	private $dirCollection;
 	
 	
-	const COLLECTION_BASE_DIR = "img/collections/";
+/* 	const COLLECTION_BASE_DIR = "img/collection/"; */
+	const COLLECTION_BASE_DIR = "img/";
 	
 	public function __construct() {
 		
@@ -43,7 +44,10 @@ class Collection {
 	public function getDirCollection() {
 		return $this->dirCollection;
 	}
-	
+
+	public function getType() {
+		return $this->type;
+	}	
 	
 	/**
 	 *
@@ -52,6 +56,16 @@ class Collection {
 		
 		return array("printemps-ete", 
 					"automne-hiver",
+					);
+	}
+	/**
+	 *
+	 */
+	public function getArrayType() {
+		
+		return array("collection", 
+					"pressbook",
+					"lookbook",
 					);
 	}
 	
@@ -94,7 +108,19 @@ class Collection {
 		
 		return $this->annee;
 	}
-	
+	/**
+	 *
+	 */	
+	public function setType($type){
+		
+		if( !in_array($type, self::getArrayType() ) ) {
+			throw new Exception ('Type inconnu');
+		}
+		
+		$this->type = $type;
+		
+		return $this->type;
+	}	
 	
 	/**
 	 *
@@ -106,7 +132,7 @@ class Collection {
 		}
 		else
 		{
-			$this->dirCollection =  self::COLLECTION_BASE_DIR .  $this->saison . "/" . $this->annee . "/";
+			$this->dirCollection =  self::COLLECTION_BASE_DIR . $this->type . "/" . $this->saison . "/" . $this->annee . "/";
 		}
 		//var_dump($this->dirCollection);
 		return $this->dirCollection;
