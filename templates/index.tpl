@@ -7,8 +7,16 @@
 				<span>{#mea_line_2#}</span>
 				<span>{#mea_line_3#}</span>
 			</h1>
+			<!--
+
+			{foreach from=$confCollection.free.0 key=k item=i}
+				<li><a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/{$i.type}/{$i.saison}/{$i.annee}" {if $smarty.server.REQUEST_URI == "/{$smarty.const.COUNTRY_CODE}/{$i.type}/{$i.saison}/{$i.annee}" }class="sub-current"{/if}>{$i.libel} </a></li>
+			{/foreach}	
+			
+-->
+{$confCollection.free.0.en}
 			<p>
-				<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/collection/printemps-ete/2014">{#lien_collection#}</a>
+				<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/{$confCollection.free.0.type}/{$confCollection.free.0.saison}/{$confCollection.free.0.annee}">{$confCollection.free.0.libel}{*#lien_collection#*}</a>
 			</p>
 		</div>
 		<script type="text/javascript" charset="utf-8">

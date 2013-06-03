@@ -336,7 +336,7 @@ FileETag None
   
  
   
-
+#conf server test
 #  RewriteCond %{SERVER_NAME} ^projets.troisw-agenceweb.com$
 #  RewriteBase /lilpourlautre/site/
 #  RewriteRule . - [E=REWRITEBASE:/lilpourlautre/site/]
@@ -352,18 +352,34 @@ FileETag None
 #  RewriteRule ^([a-z]{2,2})/histoire$ histoire.php?lang=$1&page=$2 [QSA]  
 
 
- RewriteCond %{SERVER_NAME} ^lilpourlautre.loc$ 
- DirectoryIndex /index.php
- RewriteBase /
- RewriteRule ^([a-z]{2,2})/404$ /404.php?lang=$1 [QSA,L]
- RewriteRule ^([a-z]{2,2})/accueil$ /index.php?lang=$1&page=$2 [QSA,L]
- RewriteRule ^([a-z]{2,2})/$ /index.php?lang=$1&page=$2 [QSA,L]
- RewriteRule ^([a-z]{2,2})/boutique$ /boutique.php?lang=$1&page=$2 [QSA]
- RewriteRule ^([a-z]{2,2})/([a-z\-]+)/([a-z\-]+)/([0-9]{4,4})$ /collection.php?lang=$1&type=$2&saison=$3&annee=$4 [QSA]
- RewriteRule ^([a-z]{2,2})/collection/pro/([a-z\-]+)/([0-9]{4,4})$ /collection_pro.php?lang=$1&saison=$2&annee=$3 [QSA]
- RewriteRule ^([a-z]{2,2})/pro$ /professionnels.php?lang=$1 [QSA]  
- RewriteRule ^([a-z]{2,2})/contacts$ /contacts.php?lang=$1&page=$2 [QSA]
- RewriteRule ^([a-z]{2,2})/histoire$ /histoire.php?lang=$1&page=$2 [QSA]
+#conf local
+# RewriteCond %{SERVER_NAME} ^lilpourlautre.loc$ 
+# DirectoryIndex /index.php
+# RewriteBase /
+# RewriteRule ^([a-z]{2,2})/404$ /404.php?lang=$1 [QSA,L]
+# RewriteRule ^([a-z]{2,2})/accueil$ /index.php?lang=$1&page=$2 [QSA,L]
+# RewriteRule ^([a-z]{2,2})/$ /index.php?lang=$1&page=$2 [QSA,L]
+# RewriteRule ^([a-z]{2,2})/boutique$ /boutique.php?lang=$1&page=$2 [QSA]
+# RewriteRule ^([a-z]{2,2})/([a-z\-]+)/([a-z\-]+)/([0-9]{4,4})$ /collection.php?lang=$1&type=$2&saison=$3&annee=$4 [QSA]
+# RewriteRule ^([a-z]{2,2})/collection/pro/([a-z\-]+)/([0-9]{4,4})$ /collection_pro.php?lang=$1&saison=$2&annee=$3 [QSA]
+# RewriteRule ^([a-z]{2,2})/pro$ /professionnels.php?lang=$1 [QSA]  
+# RewriteRule ^([a-z]{2,2})/contacts$ /contacts.php?lang=$1&page=$2 [QSA]
+# RewriteRule ^([a-z]{2,2})/histoire$ /histoire.php?lang=$1&page=$2 [QSA]
+
+
+#conf prod
+ RewriteCond %{SERVER_NAME} ^lilpourlautre.com$ 
+ DirectoryIndex /new/index.php
+ RewriteBase /new/
+ RewriteRule ^([a-z]{2,2})/404$ 404.php?lang=$1 [QSA,L]
+ RewriteRule ^([a-z]{2,2})/accueil$ index.php?lang=$1&page=$2 [QSA,L]
+ RewriteRule ^([a-z]{2,2})/$ index.php?lang=$1&page=$2 [QSA,L]
+ RewriteRule ^([a-z]{2,2})/boutique$ boutique.php?lang=$1&page=$2 [QSA]
+ RewriteRule ^([a-z]{2,2})/([a-z\-]+)/([a-z\-]+)/([0-9]{4,4})$ collection.php?lang=$1&type=$2&saison=$3&annee=$4 [QSA]
+ RewriteRule ^([a-z]{2,2})/collection/pro/([a-z\-]+)/([0-9]{4,4})$ collection_pro.php?lang=$1&saison=$2&annee=$3 [QSA]
+ RewriteRule ^([a-z]{2,2})/pro$ professionnels.php?lang=$1 [QSA]  
+ RewriteRule ^([a-z]{2,2})/contacts$ contacts.php?lang=$1&page=$2 [QSA]
+ RewriteRule ^([a-z]{2,2})/histoire$ histoire.php?lang=$1&page=$2 [QSA]
 
 </IfModule>
 

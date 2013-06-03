@@ -37,22 +37,28 @@ session_start();
 //Conf collection
 
 
-$confCollection = array( "free" => array( 
+$confCollection = array(
+ 
+
+						"free" => array( 
 										array(
 												"type" => "lookbook",
 												"saison" => "printemps-ete", 
 												"annee" => "2013", 
-												"libel" => "Lookbook Printemps-ete 2013"),
+												"libel" => "Lookbook Printemps-ete 2013", 
+												"fr" => "f jhkjhkhj kjh kjh kjh kjh kjhr",
+												"en" => "en"
+												),
 										array(
 												"type" => "lookbook",
 												"saison" => "automne-hiver", 
 												"annee" => "2013", 
-												"libel" => "Lookbook Automne-hiver 2103-14"),									
+												"libel" => "Lookbook Automne-hiver 2013-14"),									
 										array(
 												"type" => "pressbook",
 												"saison" => "automne-hiver", 
 												"annee" => "2013", 
-												"libel" => "Pressbook Automne-hiver 2103-14"),
+												"libel" => "Pressbook Automne-hiver 2013-14"),
 										 ),
 										  
 						 "pro" => array( array("saison" => "automne-hiver", "annee" => "2015"),
@@ -126,8 +132,17 @@ if( !in_array($country_code, $lang_authorized) ) {
 
 
 
+if( $_SERVER["SERVER_NAME"] == 'lilpourlautre.com' ) {
+	
 
-if( $_SERVER["SERVER_NAME"] == 'lilpourlautre.loc' ) {
+	$baseUrl = "http://lilpourlautre.com/new";
+	$currentUrl = $baseUrl.$_SERVER["REQUEST_URI"];
+/* 	http://projets.troisw-agenceweb.com/lilpourlautre/site/ */
+	$_SERVER['DOCUMENT_ROOT'] = $_SERVER['DOCUMENT_ROOT'] . "/new";
+
+}
+
+elseif( $_SERVER["SERVER_NAME"] == 'lilpourlautre.loc' ) {
 	
 	$serverProt = "";
 	if( $_SERVER["SERVER_PORT"] == "8888") {

@@ -45,7 +45,6 @@
 -->
 </ul>	
 
-
 <select onchange="window.location.href=this.value">
 	<option value="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/accueil" {if $smarty.server.SCRIPT_NAME == '/index.php'}selected{/if}>
 		{#home_page#}
