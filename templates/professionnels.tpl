@@ -37,7 +37,8 @@ demande de mot de passe
 						<input type="submit" name="valider" style="float:right;" value="{#submit#}"/>
 					</p>
 				</fieldset>
-				
+				<!--
+
 				<p class="error">
 					error
 				</p>
@@ -45,6 +46,7 @@ demande de mot de passe
 				<p class="confirmation">
 					confirmation
 				</p>
+-->
 
 				
 				

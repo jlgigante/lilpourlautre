@@ -41,6 +41,13 @@ $confCollection = array(
  
 
 						"free" => array( 
+
+										array(
+												"type" => "lookbook",
+												"saison" => "automne-hiver", 
+												"annee" => "2013", 
+												"libel" => "Lookbook Automne-hiver 2013-14"),									
+												
 										array(
 												"type" => "lookbook",
 												"saison" => "printemps-ete", 
@@ -49,11 +56,6 @@ $confCollection = array(
 												"fr" => "f jhkjhkhj kjh kjh kjh kjh kjhr",
 												"en" => "en"
 												),
-										array(
-												"type" => "lookbook",
-												"saison" => "automne-hiver", 
-												"annee" => "2013", 
-												"libel" => "Lookbook Automne-hiver 2013-14"),									
 										array(
 												"type" => "pressbook",
 												"saison" => "automne-hiver", 

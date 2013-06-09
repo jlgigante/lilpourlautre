@@ -39,8 +39,10 @@
 					Contacts
 				</h2>
 				<ul>
-					<li><a class="contacts" href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/contacts">{#social_contacts#}</a></li>
+				<!--
+	<li><a class="contacts" href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/contacts">{#social_contacts#}</a></li>
 					<li><a class="press" href="http://google.com">{#social_press#}</a></li>
+-->
 					<li><a class="facebook" href="">Facebook</a></li>
 					<li><a class="twitter" href="">Twitter</a></li>
 				</ul>
