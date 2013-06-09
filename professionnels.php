@@ -7,9 +7,9 @@ require_once('include/config.php');
 //check identification
 
 
-
+$send = false;
 if($_POST) {
-	var_dump($_POST);
+	//var_dump($_POST);
 	
 	$var = "";
 	
@@ -17,12 +17,14 @@ if($_POST) {
 	
 	$name = filter_var($_POST["name"], FILTER_SANITIZE_SPECIAL_CHARS);
 	$firstname = filter_var($_POST["firstname"], FILTER_SANITIZE_SPECIAL_CHARS);
+	$compagny = filter_var($_POST["compagny"], FILTER_SANITIZE_SPECIAL_CHARS);
 	$email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 	
 	$formValues = array(
 						"name" => $name,
 						"firstname" => $firstname,
 						"email" => $email,
+						"compagny" => $compagny,
 				);
 	
 	
@@ -30,6 +32,7 @@ if($_POST) {
 	$errors = array();
 	$errors["name"] = empty($name) ? "erreur nom" : false;
 	$errors["firstname"] = empty($firstname) ? "erreur prenom" : false;
+	$errors["compagny"] = empty($compagny) ? "erreur compagny" : false;
 	$errors["email"] =  !filter_var($email, FILTER_VALIDATE_EMAIL) ? "erreur email" : false;
 	//
 	foreach($errors as $key=>$val)
@@ -46,18 +49,19 @@ if($_POST) {
 		$subject = "LiL pour l'autre - demande de code ";
 		$message = 'Bonjour !';
 		$headers = 'From: '.EMAIL_CONTACT."\r\n" .
-					'Reply-To: '.$param['email'] . "\r\n" .
+					'Reply-To: '.$email . "\r\n" .
 					'X-Mailer: PHP/' . phpversion();
 	
 		$message = "
-					nom : ".$param['nom']." \r\n
-					prenom : ".$param['prenom']." \r\n
-					email :  ".$param['email']." \r\n
-					telephone :  ".$param['telephone']." \r\n
-					entreprise :  ".$param['entreprise']." \r\n
-					message :  ".$param['message'];
+					nom : ".$name." \r\n
+					prenom : ".$firstname." \r\n
+					siciete : ".$compagny." \r\n
+					email :  ".$email;
 		
-		     mail(EMAIL_CONTACT, $subject, $message, $headers);	
+	    mail(EMAIL_CONTACT, $subject, $message, $headers);	
+	    
+	    $send = true;
+
 	}
 }
 
@@ -98,6 +102,7 @@ if( isset($param["code"])  )
 }
 
 
+$smarty->assign("send", $send);
 $smarty->assign("title", "Collection Pro");
 $smarty->assign("country_conf", COUNTRY_CODE . ".conf");
 $smarty->display('professionnels.tpl');

@@ -5,7 +5,11 @@
 			<div class="column">
 				<h2>{#title_histoire#}</h2>
 				<p>
-					{#content_histoire#|nl2br|truncate:170:'...'} 
+					{if $smarty.const.COUNTRY_CODE == 'fr'}
+						{#content_histoire#|nl2br|truncate:325:'...'} 
+					{else}
+						{#content_histoire#|nl2br|truncate:310:'...'} 
+					{/if}
 				</p>			
 				<p class="lire"><a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/histoire">{#read_more#}</a></p>
 			</div>
@@ -40,9 +44,9 @@
 				</h2>
 				<ul>
 				
-	<li><a class="contacts" href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/contacts">{#social_contacts#}</a></li>
-					<li><a class="press" href="http://google.com">{#social_press#}</a></li>
+					<li><a class="contacts" href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/contacts">{#social_contacts#}</a></li>
 					{*
+					<li><a class="press" href="http://google.com">{#social_press#}</a></li>					
 					<li><a class="facebook" href="">Facebook</a></li>
 					<li><a class="twitter" href="">Twitter</a></li>
 					*}

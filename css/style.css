@@ -269,7 +269,7 @@ header #content {
   margin: 0px auto;
 }
 header #content #logo {
-  width: 103px;
+  width: 220px;
   height: 119px;
   display: block;
   /* 		background: purple; */
@@ -349,7 +349,7 @@ header #content nav li ul {
   display: none;
   position: absolute;
   top: 35px;
-  left: 100px;
+  left: 170px;
   /* 					background: grey; */
 
 }
@@ -544,10 +544,10 @@ section div#content {
 }
 .histoire {
   background: rgba(255, 255, 255, 0.5);
-  height: 477px;
 }
 .histoire div {
-  width: auto;
+  /* 		width: 100%; */
+
   /* 		background: aqua; */
 
   padding: 35px;
@@ -564,24 +564,24 @@ section div#content {
 .histoire h1 span:nth-child(2) {
   font-weight: 200;
 }
-.histoire p {
+.histoire p:first-of-type {
+  width: 70%;
   text-align: justify;
-  width: 100%;
-  /* 		padding: 35px; */
-
-  /* 		margin: 0 auto; */
-
   font-family: Times New Roman, Times, serif;
   font-size: 1.1em;
-  /*margin-top: 1em; */
-
-  -moz-column-count: 3;
-  /* Firefox */
-
-  -webkit-column-count: 3;
-  /* Safari and Chrome */
-
-  column-count: 3;
+  float: left;
+}
+.histoire p:last-of-type {
+  width: 30%;
+  float: right;
+  text-align: right;
+}
+.histoire p:last-of-type img {
+  width: 90%;
+}
+.histoire p:last-of-type em {
+  display: block;
+  font-size: 0.7em;
 }
 /*
  * PRO
@@ -629,6 +629,16 @@ section div#content {
   margin: 0px;
   overflow: hidden;
   margin-bottom: 30px;
+  /*
+div:hover > p{
+			opacity: 1;
+			transition: opacity .25s ease-in-out;
+			-moz-transition: opacity .25s ease-in-out;
+			-webkit-transition: opacity .25s ease-in-out;
+			text-shadow: 7px 5px 4px black; 
+		}
+*/
+
 }
 .collection li div {
   position: relative;
@@ -653,15 +663,7 @@ section div#content {
   font-family: Source Sans Pro, sans-serif;
   font-size: 1.2em;
   text-transform: uppercase;
-  opacity: 0.21;
-}
-.collection li div:hover > p {
   opacity: 1;
-  transition: opacity 0.25s ease-in-out;
-  -moz-transition: opacity 0.25s ease-in-out;
-  -webkit-transition: opacity 0.25s ease-in-out;
-  /* 			text-shadow: 7px 5px 4px black; */
-
 }
 /*
  * FOOTER
@@ -749,7 +751,8 @@ footer #content .column .twitter:before {
   content: url(../img/twitter.png);
 }
 footer #content .column:first-of-type {
-  background: url(../img/lil_fond.png) no-repeat center center;
+  /*background: url(../img/lil_fond.png) no-repeat center center;*/
+
 }
 footer #content .column:last-of-type {
   width: 130px;
@@ -875,17 +878,8 @@ footer #content .column:last-of-type h2 {
   /*
   	 * HISTOIRE
   	 */
-  .histoire div {
-    padding: 10px;
-  }
-  .histoire p {
-    -moz-column-count: 1;
-    /* Firefox */
-  
-    -webkit-column-count: 1;
-    /* Safari and Chrome */
-  
-    column-count: 1;
+  .histoire {
+    padding: 20px 20px 20px 20px;
   }
   /*
   	 * PRO

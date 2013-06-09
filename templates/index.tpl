@@ -14,7 +14,7 @@
 			{/foreach}	
 			
 -->
-{$confCollection.free.0.en}
+{*$confCollection.free.0.en*}
 			<p>
 				<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/{$confCollection.free.0.type}/{$confCollection.free.0.saison}/{$confCollection.free.0.annee}">{$confCollection.free.0.libel}{*#lien_collection#*}</a>
 			</p>

@@ -29,7 +29,7 @@
 	
 <!-- 	<link href="../css/main.css" media="screen" rel="stylesheet" type="text/css" /> -->
 	
-	<link rel="stylesheet/less" type="text/css" href="{$smarty.const.BASE_URL}/css/style.css" />
+	<link rel="stylesheet" type="text/css" href="{$smarty.const.BASE_URL}/css/style.css" />
 	<script src="{$smarty.const.BASE_URL}/js/vendor/less-1.3.3.min.js" type="text/javascript"></script>
 	<script src="{$smarty.const.BASE_URL}/js/vendor/jquery-1.9.1.min.js" charset="utf-8"></script>
 	<script src="{$smarty.const.BASE_URL}/js/vendor/jquery.easing.1.3.js" charset="utf-8"></script>

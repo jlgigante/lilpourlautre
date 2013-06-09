@@ -4,9 +4,6 @@ require_once('include/config.php');
 include("include/Utils.class.php");
 include("include/Collection.class.php");
 
-
-//
-
 $collection = new Collection();
 
 try {

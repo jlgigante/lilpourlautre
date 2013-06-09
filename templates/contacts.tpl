@@ -21,19 +21,20 @@
 				</li>
 				<li>
 					<h2>
-						Service commercial
+						{#title_commercial_service#}
 					</h2>
-					<a href="mailto:commercial@lilpourlautre.com">commercial@lilpourlautre.com </a>
+					<a href="mailto:g.poussy@lilpourlautre.com">g.poussy@lilpourlautre.com</a>
+
 				</li>
 				<li>
 					<h2>
-						Service presse
+						{#title_press_service#}
 					</h2>
-					<a href="mailto:presse@lilpourlautre.com">presse@lilpourlautre.com</a>
+					<a href="mailto:johannasa@dresscodepress.com">johannasa@dresscodepress.com</a>					
 				</li>
 				<li>
 					<h2>
-						Boutique
+						{#title_boutique#}
 						</h2>
 					<p>
 						2 bis, rue de Gribeauval <br/>

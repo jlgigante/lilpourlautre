@@ -18,7 +18,7 @@ $param = $_GET;
 
 $lang_authorized = array("fr", "en");
 
-define("EMAIL_CONTACT", "jlg@jlgigante.fr");
+define("EMAIL_CONTACT", "jlgigante@free.fr");
 
 
 if( @!$param['lang'] && @!in_array($param['lang'], $lang_authorized) ) {
@@ -38,8 +38,10 @@ session_start();
 
 
 $confCollection = array(
- 
 
+						
+ 						
+						/*
 						"free" => array( 
 
 										array(
@@ -62,6 +64,17 @@ $confCollection = array(
 												"annee" => "2013", 
 												"libel" => "Pressbook Automne-hiver 2013-14"),
 										 ),
+										 */
+						
+						"press" => array(	array(	"type" => "pressbook",
+													"saison" => "automne-hiver", 
+													"annee" => "2013", 
+													"libel" => "Pressbook Automne-hiver 2013-14"),					 			     
+						 			   ),
+						
+						"free" => array( array("type" => "collection", "saison" => "printemps-ete", "annee" => "2013", "libel" => "Printemps-été 2013"),
+										array("type" => "collection", "saison" => "automne-hiver", "annee" => "2013", "libel" => "Automne-hiver 2013-14"),						 			     
+						 			   ),
 										  
 						 "pro" => array( array("saison" => "automne-hiver", "annee" => "2015"),
 						 			     array("saison" => "printemps-ete", "annee" => "2013"),

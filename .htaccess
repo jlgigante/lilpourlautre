@@ -365,6 +365,7 @@ FileETag None
  RewriteRule ^([a-z]{2,2})/pro$ /professionnels.php?lang=$1 [QSA]  
  RewriteRule ^([a-z]{2,2})/contacts$ /contacts.php?lang=$1&page=$2 [QSA]
  RewriteRule ^([a-z]{2,2})/histoire$ /histoire.php?lang=$1&page=$2 [QSA]
+ RewriteRule ^([a-z]{2,2})/press$ /press.php?lang=$1 [QSA]
 
 
 #conf prod

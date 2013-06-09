@@ -16,6 +16,12 @@
 			<p>
 				{#content_histoire#}
 			</p>
+			
+			<p>
+				<img src="{$smarty.const.BASE_URL}/img/jose.jpg" alt="Jose">
+				<em>{#credit_photo#}</em>
+			</p>
+			<br>	
 		
 		</div>
 		

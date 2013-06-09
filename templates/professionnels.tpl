@@ -7,47 +7,53 @@
 		<div>
 			<h1>Title : {#title_pro#}</h1>
 			<h2>
-				L'accès à la collection à venir est protégé est réservé aux professionels.
+				{#intro#}				
 			</h2>	
 			<p>
-				Veuillez remplir le formulaire suivant.<br>
-				Nous prendrons contact avec vous dans les plus brefs délais afin que vous puissiez accéder à cet espace
+				{#text#}				
 			</p>
 	
 	<!--
 demande de mot de passe
 	{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/pro
 -->
-	
+
 			<form action="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/pro" method="post" name="form_get_code">
 			
 				<fieldset>
 					<legend>Form Name</legend>
 					<p>
 						<label for="first">{#name#}</label>
-						<input type="text" name="name" id="name" placeholder="{#name#}" value="{if isset($formValues.name)}{$formValues.name}{/if}" {if isset($errors.name) }class="form-error"{/if} >
+						<input type="text" name="name" id="name" placeholder="{#name#}" value="{if isset($formValues.name)}{$formValues.name}{/if}" {if isset($errors.name) }class="form-error"{/if} required >
 					</p>
 					<p>
 						<label for="first">{#firstname#}</label>
-						<input type="text" name="firstname" id="firstname" placeholder="{#firstname#}" value="{if isset($formValues.firstname)}{$formValues.firstname}{/if}" {if isset($errors.firstname) }class="form-error"{/if}>
+						<input type="text" name="firstname" id="firstname" placeholder="{#firstname#}" value="{if isset($formValues.firstname)}{$formValues.firstname}{/if}" {if isset($errors.firstname) }class="form-error"{/if} required>
 					</p>
+
+					<p>
+						<label for="first">{#compagny#}</label>
+						<input type="text" name="compagny" id="compagny" placeholder="{#compagny#}" value="{if isset($formValues.compagny)}{$formValues.compagny}{/if}" {if isset($errors.compagny) }class="form-error"{/if} required>
+					</p>
+
 					<p>
 						<label for="first">{#email#}</label>
-						<input type="text" name="email" id="email" placeholder="{#email#}"  value="{if isset($formValues.email)}{$formValues.email}{/if}"  {if isset($errors.email) }class="form-error"{/if}>
+						<input type="email" name="email" id="email" placeholder="{#email#}"  value="{if isset($formValues.email)}{$formValues.email}{/if}"  {if isset($errors.email) }class="form-error"{/if} required >
 						<input type="submit" name="valider" style="float:right;" value="{#submit#}"/>
 					</p>
 				</fieldset>
-				<!--
-
-				<p class="error">
-					error
-				</p>
-	
-				<p class="confirmation">
-					confirmation
-				</p>
--->
-
+				
+				{if isset($send) && $send == '1'}
+					<p class="confirmation">
+						confirmation
+					</p>
+					{*
+					<p class="error">
+						error
+					</p>
+					*}
+				
+			{/if}
 				
 				
 			</form>
