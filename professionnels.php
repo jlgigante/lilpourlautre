@@ -17,14 +17,14 @@ if($_POST) {
 	
 	$name = filter_var($_POST["name"], FILTER_SANITIZE_SPECIAL_CHARS);
 	$firstname = filter_var($_POST["firstname"], FILTER_SANITIZE_SPECIAL_CHARS);
-	$compagny = filter_var($_POST["compagny"], FILTER_SANITIZE_SPECIAL_CHARS);
+	$company = filter_var($_POST["company"], FILTER_SANITIZE_SPECIAL_CHARS);
 	$email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 	
 	$formValues = array(
 						"name" => $name,
 						"firstname" => $firstname,
 						"email" => $email,
-						"compagny" => $compagny,
+						"company" => $company,
 				);
 	
 	
@@ -32,7 +32,7 @@ if($_POST) {
 	$errors = array();
 	$errors["name"] = empty($name) ? "erreur nom" : false;
 	$errors["firstname"] = empty($firstname) ? "erreur prenom" : false;
-	$errors["compagny"] = empty($compagny) ? "erreur compagny" : false;
+	$errors["company"] = empty($company) ? "erreur company" : false;
 	$errors["email"] =  !filter_var($email, FILTER_VALIDATE_EMAIL) ? "erreur email" : false;
 	//
 	foreach($errors as $key=>$val)
@@ -55,7 +55,7 @@ if($_POST) {
 		$message = "
 					nom : ".$name." \r\n
 					prenom : ".$firstname." \r\n
-					siciete : ".$compagny." \r\n
+					siciete : ".$company." \r\n
 					email :  ".$email;
 		
 	    mail(EMAIL_CONTACT, $subject, $message, $headers);	

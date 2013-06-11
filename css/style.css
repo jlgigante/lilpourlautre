@@ -133,6 +133,12 @@ label {
   clear: both;
   height: 0;
 }
+.blanc {
+  color: #fdfdfd;
+}
+.opacity {
+  opacity: 0.7 !important;
+}
 /*
  * FORMULAIRE
  */
@@ -518,17 +524,18 @@ section div#content {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  box-shadow: inset 0px 128px 150px 50px rgba(0, 0, 0, 0.81);
+  /* 	box-shadow: inset 0px 128px 150px 50px rgba(0,0,0,0.81); */
+
   background-repeat: no-repeat;
 }
 .boutique h1 {
   position: relative;
-  top: 100px;
+  top: 50px;
   left: 50px;
 }
 .boutique h1 p {
   text-transform: uppercase;
-  color: #eee5c7;
+  color: #000000;
 }
 .boutique h1 p:nth-child(1) {
   font-size: 1.875em;
@@ -544,6 +551,7 @@ section div#content {
 }
 .histoire {
   background: rgba(255, 255, 255, 0.5);
+  padding-bottom: 50px;
 }
 .histoire div {
   /* 		width: 100%; */
@@ -568,7 +576,7 @@ section div#content {
   width: 70%;
   text-align: justify;
   font-family: Times New Roman, Times, serif;
-  font-size: 1.1em;
+  font-size: 0.9em;
   float: left;
 }
 .histoire p:last-of-type {
@@ -657,11 +665,11 @@ div:hover > p{
 }
 .collection li div p {
   position: absolute;
-  bottom: 50px;
+  bottom: 30px;
   left: 30px;
   z-index: 99;
   font-family: Source Sans Pro, sans-serif;
-  font-size: 1.2em;
+  font-size: 0.8em;
   text-transform: uppercase;
   opacity: 1;
 }
@@ -828,7 +836,8 @@ footer #content .column:last-of-type h2 {
   	 */
   .boutique {
     height: 238px;
-    box-shadow: inset 0px 18px 20px 100px rgba(0, 0, 0, 0.41);
+    /* 		box-shadow: inset 0px 18px 20px 100px rgba(255,0,0,0.92); */
+  
   }
   .boutique h1 {
     top: 30px;

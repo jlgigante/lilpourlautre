@@ -23,7 +23,7 @@
 								
 						<div>
 							<img id="prod0{$id}" src="{$smarty.const.BASE_URL}/img/grey.gif" data-original="{$imgFile.url}" alt="{#$imgFile.id#|nl2br}" title=""  class="visuel" />
-							<p>
+							<p {if $smarty.get.saison == "automne-hiver"}class="blanc opacity"{/if}>
 								{#$imgFile.id#|nl2br}
 							</p>
 						</div>

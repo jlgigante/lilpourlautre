@@ -33,7 +33,7 @@ demande de mot de passe
 
 					<p>
 						<label for="first">{#compagny#}</label>
-						<input type="text" name="compagny" id="compagny" placeholder="{#compagny#}" value="{if isset($formValues.compagny)}{$formValues.compagny}{/if}" {if isset($errors.compagny) }class="form-error"{/if} required>
+						<input type="text" name="company" id="company" placeholder="{#company#}" value="{if isset($formValues.company)}{$formValues.company}{/if}" {if isset($errors.company) }class="form-error"{/if} required>
 					</p>
 
 					<p>

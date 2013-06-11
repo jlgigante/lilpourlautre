@@ -38,50 +38,42 @@ session_start();
 
 
 $confCollection = array(
-
-						
- 						
-						/*
-						"free" => array( 
-
-										array(
-												"type" => "lookbook",
-												"saison" => "automne-hiver", 
-												"annee" => "2013", 
-												"libel" => "Lookbook Automne-hiver 2013-14"),									
-												
-										array(
-												"type" => "lookbook",
-												"saison" => "printemps-ete", 
-												"annee" => "2013", 
-												"libel" => "Lookbook Printemps-ete 2013", 
-												"fr" => "f jhkjhkhj kjh kjh kjh kjh kjhr",
-												"en" => "en"
-												),
-										array(
-												"type" => "pressbook",
-												"saison" => "automne-hiver", 
-												"annee" => "2013", 
-												"libel" => "Pressbook Automne-hiver 2013-14"),
-										 ),
-										 */
 						
 						"press" => array(	array(	"type" => "pressbook",
 													"saison" => "automne-hiver", 
 													"annee" => "2013", 
-													"libel" => "Pressbook Automne-hiver 2013-14"),					 			     
+													"libel" => "Pressbook Automne-hiver 2013-14"
+												 ),					 			     
 						 			   ),
 						
-						"free" => array( array("type" => "collection", "saison" => "printemps-ete", "annee" => "2013", "libel" => "Printemps-été 2013"),
-										array("type" => "collection", "saison" => "automne-hiver", "annee" => "2013", "libel" => "Automne-hiver 2013-14"),						 			     
-						 			   ),
+						"collection" => array( 
+											//
+											array(
+												"type" => "collection", 
+												"saison" => "automne-hiver", 
+												"annee" => "2013", 
+												"libel" => 	array(
+																	"fr" => "Automne-hiver 2013-14",
+																	"en" => "Autumn-Winter 2013-14"
+																),
+												),
+											array(
+												"type" => "collection", 
+												"saison" => "printemps-ete", 
+												"annee" => "2013", 
+												"libel" => 	array(
+																	"fr" => "Printemps-été 2013",
+																	"en" => "Spring-Summer 2013"
+																),
+												),
+									  ),
 										  
 						 "pro" => array( array("saison" => "automne-hiver", "annee" => "2015"),
 						 			     array("saison" => "printemps-ete", "annee" => "2013"),
 						 			   ),
 						  
-					);
 					
+);
 					
 $array = array("free" => array(
 								0 => array(

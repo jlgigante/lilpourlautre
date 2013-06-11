@@ -5,133 +5,100 @@
     array (
       'vars' => 
       array (
-        'prod01' => '01 2013
-Manteau Giverny
+        'prod01' => 'Manteau Giverny
 Jupe Santa Monica
 ',
-        'prod02' => '02
+        'prod02' => '
 ',
-        'prod03' => '03
-Robe Virgin
+        'prod03' => 'Robe Virgin
 ',
-        'prod04' => '04
-Robe Vegas
+        'prod04' => 'Robe Vegas
 ',
-        'prod05' => '05
-Robe Bagatelle
+        'prod05' => 'Robe Bagatelle
 ',
-        'prod06' => '06
-Pull Voile
+        'prod06' => 'Pull Voile
 Jupe Sunny
 ',
-        'prod07' => '07
-Vest Hanuman
+        'prod07' => 'Vest Hanuman
 Short Aube
 ',
-        'prod08' => '08
-Vest Rambuteau
+        'prod08' => 'Vest Rambuteau
 Tunique Honey
 Sac Voltaire
 ',
-        'prod09' => '09
-Robe Quiz
+        'prod09' => 'Robe Quiz
 ',
-        'prod10' => '10
-Robe Chrysalide
+        'prod10' => 'Robe Chrysalide
 Sac Ile
 ',
-        'prod11' => '11
-Top Klee
+        'prod11' => 'Top Klee
 Pantalon Kandinsky
 Ceinture Viva
 ',
-        'prod12' => '12
-Veste Raspail
+        'prod12' => 'Veste Raspail
 Jupe Lueur
 ',
-        'prod13' => '13
-Robe Gum
+        'prod13' => 'Robe Gum
 Gilet Carambar
 ',
-        'prod14' => '14
-Pull Zebre
+        'prod14' => 'Pull Zebre
 Jupe Tendresse
 ',
-        'prod15' => '15
-Robe Sully
+        'prod15' => 'Robe Sully
 ',
-        'prod16' => '16
-Robe Domino
+        'prod16' => 'Robe Domino
 Sac Voltaire
 ',
-        'prod17' => '17
-Veste Phuket
+        'prod17' => 'Veste Phuket
 Jupe Désir
 ',
-        'prod18' => '18
-Gilet Pop
+        'prod18' => 'Gilet Pop
 Jupe Faubourg
 ',
-        'prod19' => '19
-Cardigan Gazelle
+        'prod19' => 'Cardigan Gazelle
 Pantalon Mirage
 Sac Ile
 ',
-        'prod20' => '20
-Chemise Savane
+        'prod20' => 'Chemise Savane
 Jupe Camelia
 Sac Voltaire
 ',
-        'prod21' => '21
-Top Jaguar
+        'prod21' => 'Top Jaguar
 Jupe Alba
 Sac Ile
 ',
-        'prod22' => '22
-Pull Drink
+        'prod22' => 'Pull Drink
 Jupe Delhi
 Sac Ile
 ',
-        'prod23' => '23
-Tunique Fog
+        'prod23' => 'Tunique Fog
 Sac Ile
 ',
-        'prod24' => '24
-Robe Madison
+        'prod24' => 'Robe Madison
 ',
-        'prod25' => '25
-Robe Aurore
+        'prod25' => 'Robe Aurore
 ',
-        'prod26' => '26
-Top Fusion
+        'prod26' => 'Top Fusion
 Legging Crazy
 Sac Ile
 ',
-        'prod27' => '27
-Manteau Mabillon
+        'prod27' => 'Manteau Mabillon
 Pantalon Mia
 ',
-        'prod28' => '28
+        'prod28' => '',
+        'prod29' => 'Robe Reve
 ',
-        'prod29' => '29
-Robe Reve
+        'prod30' => 'Robe Capri
 ',
-        'prod30' => '30
-Robe Capri
+        'prod31' => 'Combinaison Palmyre
 ',
-        'prod31' => '31
-Combinaison Palmyre
-',
-        'prod32' => '32
-Gilet Abime
+        'prod32' => 'Gilet Abime
 Top Alvéole
 Pantalon Oasis
 ',
-        'prod33' => '33
-',
-        'prod34' => '34
-',
-        'prod35' => '35
+        'prod33' => '',
+        'prod34' => '',
+        'prod35' => '
 ',
       ),
     ),
