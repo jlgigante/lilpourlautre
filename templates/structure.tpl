@@ -43,7 +43,7 @@
 
 		</div>
 -->
-	<div id="info" style=" position:fixed; z-index:99999; display:;">0
+	<div id="info" style=" position:fixed; z-index:99999; display:none;">0
 	</div>
 	
 
@@ -51,15 +51,23 @@
 	
 	
 	
-	<div id="stickyHeader" style="display:block; visibility:hidden; position:fixed; width:100%; background:red; z-index:99999;">
+	<div id="stickyHeader" style="display:block; display:none; position:fixed; width:100%;  bottom:0px;  z-index:99999; text-align:right;">
 		
-		{include file="_menu.tpl" }
+					<a href="#header" style="background:#4a494b; padding:10px; ">TOP</a>
+		
+		{*include file="_menu.tpl" *}
 	</div>
 	
 	<header id="header">
 		
 		<div id="content">
 				<div id="lang">
+					{*
+					<ul>
+						<li style="width:30px; background:red;"><span class="top_arrow"  style="position:absolute; margin:15px auto;"></span>FR</li>
+						<li>EN</li>
+					</ul>
+					*}
 				<a href="{$smarty.const.BASE_URL}/fr/{*$argArray.page*}">FR</a> |<a href="{$smarty.const.BASE_URL}/en/{*$argArray.page*}">EN</a>
 				
 			</div>
@@ -103,14 +111,18 @@
 		//
 			var refPosition = $('#info').offset();	
 			$('#info').html(refPosition.top);		
+			
 
+			
 			if(refPosition.top >= 250) {
-				//$("#stickyHeader").show();
-				//$("#header").stop().css({top: '-180px', position: 'fixed'});
+				$("#stickyHeader").slideDown('slow');
+				//$("#header").stop().css({top: '-80px', position: 'fixed'});
 				
 			} else {
-				//$("#stickyHeader").hide();	
-/* 					$("#header").stop().animate({top: '0px', position: 'relative'}); */
+				$("#stickyHeader").slideUp('slow');	
+				//	$("#header").stop().animate({top: '0px', position: 'relative'});
+					
+					
 			}
 			
 /*

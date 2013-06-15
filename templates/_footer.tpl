@@ -16,11 +16,14 @@
 			
 			<div class="column">
 				<h2>{#title_pro#}</h2>
+				
+				{if isset($smarty.session.lpa_pro) && $smarty.session.lpa_pro == "OK"}
+				<input type="button" value="acces professionnels"  onclick="location.href='{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/professionnels';">
+				
+				{else}
 				<p class="clearfix">
 					{#content_pro#}
 				</p>
-				
-				
 				<form action="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/collection_pro.php" method="post" accept-charset="utf-8" name="form_professionnels" id="form_professionnels">
 					<fieldset>
 						<legend>Professionnels form</legend>
@@ -35,7 +38,8 @@
 					
 				</form>
 				<p id="retour"></p>
-				<p><a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/pro">{#link_pro_get_pass#}</a></p>
+				<p><a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/professionnels/acces">{#link_pro_get_pass#}</a></p>
+				{/if}
 			</div>
 			
 			<div class="column">

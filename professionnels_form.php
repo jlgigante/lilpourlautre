@@ -2,15 +2,11 @@
 require_once('include/config.php');
 
 
+//var_dump($_SERVER);
 
 //check identification
-if ( !isset($_SESSION["lpa_pro"]) ) {
-	$redirect = BASE_URL . "/" . COUNTRY_CODE . "/professionnels/acces";
 
-	header('location:'.$redirect);
-	exit;
-}
-
+//var_dump(mail('jeanlucgigante@gmail.com', 'test', 'gdfgdfgfd '));
 
 $send = false;
 if($_POST) {
@@ -110,4 +106,4 @@ if( isset($param["code"])  )
 $smarty->assign("send", $send);
 $smarty->assign("title", "Collection Pro");
 $smarty->assign("country_conf", COUNTRY_CODE . ".conf");
-$smarty->display('professionnels.tpl');
+$smarty->display('professionnels_form.tpl');

@@ -17,9 +17,26 @@
 -->
 		<ul>
 		
+		{if $smarty.get.type == "pressbook" && $smarty.get.saison == "automne-hiver" && $smarty.get.annee == "2013"}
+		<li>
+			<div class="intro">		
+				
+				<h2>
+					<span>making of </span>
+					<span>de la  collection </span>
+					<span>automne / hiver 2013</span>
+				</h2>
+				
+				<div class="video">
+					<iframe src="http://player.vimeo.com/video/68122960?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="350" height="262" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+				</div>
+				
+			</div>
+		</li>
+		{/if}
 		{foreach from=$arrayCollectionImg key=id item=imgFile}
 		
-			<li class="produit">
+			<li>
 								
 						<div>
 							<img id="prod0{$id}" src="{$smarty.const.BASE_URL}/img/grey.gif" data-original="{$imgFile.url}" alt="{#$imgFile.id#|nl2br}" title=""  class="visuel" />

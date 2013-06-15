@@ -16,7 +16,7 @@
 -->
 {*$confCollection.free.0.en*}
 			<p>
-				<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/{$confCollection.collection.0.type}/{$confCollection.collection.0.saison}/{$confCollection.collection.0.annee}">{if $smarty.const.COUNTRY_CODE == "fr"}{$confCollection.collection.0.libel.fr}{else if $smarty.const.COUNTRY_CODE == "en"}{$confCollection.collection.0.libel.en}{/if}</a>
+				<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/{$confCollection.collection.0.type}/{$confCollection.collection.0.saison}/{$confCollection.collection.0.annee}"><span class="right_arrow"></span>{if $smarty.const.COUNTRY_CODE == "fr"}{$confCollection.collection.0.libel.fr}{else if $smarty.const.COUNTRY_CODE == "en"}{$confCollection.collection.0.libel.en}{/if}</a>
 			</p>
 		</div>
 		<script type="text/javascript" charset="utf-8">

@@ -51,7 +51,8 @@ if( isset($param["code"])  )
 			
 			$_SESSION["lpa_pro"] = "OK";
 			
-			$redirect = BASE_URL . "/" . COUNTRY_CODE . "/collection/pro/" . $confCollection["pro"][0]["saison"] . "/" . $confCollection["pro"][0]["annee"];
+/* 			$redirect = BASE_URL . "/" . COUNTRY_CODE . "/collection/pro/" . $confCollection["pro"][0]["saison"] . "/" . $confCollection["pro"][0]["annee"]; */
+			$redirect = BASE_URL . "/" . COUNTRY_CODE . "/professionnels";
 				
 			echo json_encode( array('code_retour' => CODE_RETOUR_VALIDE, 'message' => 'COOL', 'redirect'  => $redirect) );
 			exit;

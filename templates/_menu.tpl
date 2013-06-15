@@ -5,8 +5,8 @@
 	<li {if $smarty.server.SCRIPT_NAME == '/index.php' }class="current"{/if}>
 		&nbsp;<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/accueil">{#home_page#}</a>
 	</li>
-	<li {if $smarty.server.SCRIPT_NAME == '/collection.php'  && $smarty.get.type == 'collection'  or  $smarty.server.SCRIPT_NAME == '/collection_pro.php'  }class="current"{/if}>
-		&nbsp;<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/collection/{$confCollection.collection.0.saison}/{$confCollection.collection.0.annee}">collections{if isset($smarty.session.lpa_pro)} / Pro{/if}{*#collection#|sprintf:'2014'*}</a>
+	<li {if $smarty.server.SCRIPT_NAME == '/collection.php'  && $smarty.get.type == 'collection' }class="current"{/if}>
+		&nbsp;<a href="{$smarty.const.BASE_URL}/{$smarty.const.COUNTRY_CODE}/collection/{$confCollection.collection.0.saison}/{$confCollection.collection.0.annee}">collections{*if isset($smarty.session.lpa_pro)} / Pro{/if*}{*#collection#|sprintf:'2014'*}</a>
 		
 		<ul class="sub" style="">
 			{*menu free*}

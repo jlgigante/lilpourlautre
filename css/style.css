@@ -139,6 +139,9 @@ label {
 .opacity {
   opacity: 0.7 !important;
 }
+.center {
+  text-align: center;
+}
 /*
  * FORMULAIRE
  */
@@ -155,7 +158,8 @@ input[type="email"] {
   font-family: Times New Roman, Times, serif;
   font-size: 0.850em;
 }
-input[type="submit"] {
+input[type="submit"],
+input[type="button"] {
   width: 100px;
   height: 24px;
   background: black;
@@ -164,6 +168,9 @@ input[type="submit"] {
   display: inline-block;
   margin: 0;
   cursor: pointer;
+}
+input[type="button"] {
+  width: 200px !important;
 }
 .form-error {
   border-color: #820000 !important;
@@ -247,6 +254,18 @@ input[type="submit"] {
   box-shadow: none;
 }
 /* .error .close_msg,.confirmation .close_msg,.alert .close_msg,.msg_info .close_msg{display:block;position:absolute;width:20px;height:20px;padding:0;top:0;right:0;overflow:hidden;text-indent:-9999px;background-position:center center} */
+.right_arrow {
+  border-width: 5px;
+  border-color: transparent  transparent transparent white ;
+  border-style: solid;
+  float: left;
+  margin-top: 5px;
+}
+.top_arrow {
+  border-width: 5px;
+  border-color: transparent  transparent white transparent ;
+  border-style: solid;
+}
 #wrap {
   width: 960px;
   margin: 0px auto;
@@ -464,8 +483,12 @@ section div#content {
   text-transform: uppercase;
 }
 .homepage p:before {
-  content: ">";
-  color: #eee5c7;
+  left: 100%;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 5px 0 5px 8.7px;
+  border-color: transparent transparent transparent #007bff;
 }
 .contacts {
   height: 477px;
@@ -596,16 +619,12 @@ section div#content {
  */
 .professionnels {
   background: rgba(255, 255, 255, 0.5);
-  height: 477px;
+  padding-bottom: 50px;
+  /* 	height: 477px; */
+
 }
 .professionnels div {
-  /* 		background: red; */
-
-  width: 400px;
-  height: auto;
-  top: 60px;
-  margin: 0px auto;
-  position: relative;
+  padding: 35px;
 }
 .professionnels div h1 {
   display: none;
@@ -614,13 +633,63 @@ section div#content {
   font-size: 1.125em;
   font-weight: 600;
   text-transform: uppercase;
+  font-family: Source Sans Pro, sans-serif;
 }
-.professionnels div p {
+.professionnels div div:nth-child(1) {
+  padding: 0px;
+  width: 40%;
+  text-align: justify;
+  font-family: Times New Roman, Times, serif;
+  font-size: 0.9em;
+  float: left;
+  padding-left: 10%;
+  /* 		background: red; */
+
+}
+.professionnels div div:nth-child(2) {
+  padding: 0px;
+  width: 50%;
+  float: right;
+  text-align: right;
+  /* 		background: green; */
+
+  text-align: center;
+}
+.professionnels div div:nth-child(2) img {
+  width: 50%;
+}
+.professionnels div div:nth-child(2) em {
+  display: block;
+  font-size: 0.7em;
+}
+.professionnels div input[type="text"] {
+  width: 220px;
+}
+.professionnels_form {
+  background: rgba(255, 255, 255, 0.5);
+  height: 477px;
+}
+.professionnels_form div {
+  width: 400px;
+  height: auto;
+  top: 60px;
+  margin: 0px auto;
+  position: relative;
+}
+.professionnels_form div h1 {
+  display: none;
+}
+.professionnels_form div h2 {
+  font-size: 1.125em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.professionnels_form div p {
   font-family: Times New Roman, Times, serif;
   font-size: 0.938em;
   margin-top: 1em;
 }
-.professionnels div input[type="text"] {
+.professionnels_form div input[type="text"] {
   width: 220px;
 }
 /*
@@ -628,6 +697,30 @@ section div#content {
  */
 .collection h1 {
   display: none;
+}
+.collection h2 {
+  position: relative;
+  top: 20px;
+  left: 20px;
+  display: block;
+  clear: both;
+}
+.collection h2 span {
+  text-transform: uppercase;
+  color: #eee5c7;
+  display: block;
+}
+.collection h2 span:nth-child(1) {
+  font-size: 3em;
+  font-weight: 200;
+}
+.collection h2 span:nth-child(2) {
+  font-size: 1.625em;
+  font-weight: 200;
+}
+.collection h2 span:nth-child(3) {
+  font-size: 2.250em;
+  font-weight: 400;
 }
 .collection li {
   width: 50%;
@@ -647,6 +740,16 @@ div:hover > p{
 		}
 */
 
+}
+.collection li div.intro {
+  background: url(../img/bg_collection_video.jpg) no-repeat #000000;
+  height: 692px;
+}
+.collection li div.intro .video {
+  position: relative;
+  width: 100%;
+  margin: 200px auto;
+  text-align: center;
 }
 .collection li div {
   position: relative;
@@ -788,7 +891,7 @@ footer #content .column:last-of-type h2 {
   	 * SECTION	
   	 */
   section {
-    margin: 10px auto;
+    margin: 20px auto;
     width: 95%;
   }
   .homepage {
@@ -824,6 +927,9 @@ footer #content .column:last-of-type h2 {
     display: block;
     float: none;
     margin-bottom: 10px;
+  }
+  .collection li div.intro {
+    display: none;
   }
   .collection li div {
     max-width: 280px;

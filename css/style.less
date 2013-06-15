@@ -92,11 +92,14 @@ legend, label{display: none;}
 		opacity: 0.7 !important;
 }
 
+.center {
+	text-align: center;
+}
 /*
  * FORMULAIRE
  */
 
-input[type="password"], input[type="text"], input[type="email"], { 
+input[type="password"], input[type="text"], input[type="email"] { 
 	background: @blanc; 
 	border: 1px solid @grey;
 	width: 140px;
@@ -108,7 +111,7 @@ input[type="password"], input[type="text"], input[type="email"], {
 	font-size: 0.850em;
 }
 	
-input[type="submit"] {
+input[type="submit"], input[type="button"] {
 	width: 100px;
 	height: 24px;
 	background: black;
@@ -122,6 +125,10 @@ input[type="submit"] {
 input[type="submit"]:hover {
 }
 
+
+input[type="button"] {
+	width: 200px !important;
+}
 
 .form-error{
 	border-color: #820000 !important;
@@ -206,6 +213,14 @@ input[type="submit"]:hover {
 
 /* .error .close_msg,.confirmation .close_msg,.alert .close_msg,.msg_info .close_msg{display:block;position:absolute;width:20px;height:20px;padding:0;top:0;right:0;overflow:hidden;text-indent:-9999px;background-position:center center} */
 
+.right_arrow{
+	border-width:5px;border-color: transparent  transparent transparent white ;border-style:solid; float:left; margin-top:5px;
+}
+
+
+.top_arrow{
+	border-width:5px;border-color: transparent  transparent white transparent ;border-style:solid;
+}
 
 #wrap {
 	
@@ -442,15 +457,17 @@ section {
 	/**/
 	p {
 		position: relative;
-		margin: 300px 50px;
-		
+		margin: 300px 50px;		
 		text-transform: uppercase;
 	}
 	p:before{
-		content: ">";
-		color: @beige;
+	left:100%;
+		width: 0px;
+		height: 0px;
+		border-style: solid;
+		border-width: 5px 0 5px 8.7px;
+		border-color: transparent transparent transparent #007bff;
 	}
-
 }
 
 
@@ -597,38 +614,95 @@ section {
 
 .professionnels{
 	background: rgba(255,255,255,0.50);
-	height: 477px;
+	padding-bottom: 50px;
+/* 	height: 477px; */
+	
 
 	div{
+		padding: 35px;
+
+	h1 {
+		display: none;
+	}	
+	
+	h2{
+		font-size: 1.125em;
+		font-weight: 600;
+		text-transform: uppercase;
+		font-family: @font-source-sans-pro;
+	}
+		
+	div:nth-child(1){
+		padding: 0px;
+		width: 40%;
+		text-align: justify;
+		font-family: @font-times;
+		font-size : 0.9em;
+		float: left;
+		padding-left: 10%;
 /* 		background: red; */
-		width: 400px;
-		height: auto;
-		top:60px;
-		margin: 0px auto;
-		position: relative;
 		
-		h1 {
-			display: none;
-		}	
-		
-		h2{
-			font-size: 1.125em;
-			font-weight: 600;
-			text-transform: uppercase;
+
+	}
+
+	div:nth-child(2){
+		padding: 0px;
+		width: 50%;
+		float:right;
+		text-align: right;
+/* 		background: green; */
+		text-align: center;
+		img{
+			width: 50%;
+		}
+		em{
+			display: block;
+			font-size: 0.7em;
 		}
 		
-		p{
-		    font-family: @font-times;
-		    font-size: 0.938em;
-		    margin-top: 1em;
-		}
+	}
+
 		
 		input[type="text"] {
 			width: 220px;
 		}
-	}	
+		
+			}
+		
 }
 
+
+.professionnels_form {
+	background: rgba(255, 255, 255, 0.5);
+	height: 477px;
+	div {
+  		width: 400px;
+  		height: auto;
+  		top: 60px;
+  		margin: 0px auto;
+  		position: relative;
+  		
+  		h1 {
+  			display: none;
+  		}
+  		h2 {
+	  		font-size: 1.125em;
+	  		font-weight: 600;
+	  		text-transform: uppercase;
+	  	}
+	  	
+	  	p {	
+	  		font-family: Times New Roman, Times, serif;
+	  		font-size: 0.938em;
+	  		margin-top: 1em;
+	  	}
+	  	
+	  	input[type="text"] {
+	  		width: 220px;
+	  	}
+
+  	}
+}
 
 /*
  * COLLECTION
@@ -636,6 +710,31 @@ section {
 .collection{
 	h1 {
 		display: none;
+	}
+
+	h2 {
+		position: relative;
+		top:20px;
+		left: 20px;
+		display: block;
+		clear: both;
+		span {			
+			text-transform: uppercase;
+			color: @beige;
+			display: block;
+		}
+		span:nth-child(1){
+			font-size: 3em;
+			font-weight: 200;	
+		}
+		span:nth-child(2){
+			font-size: 1.625em;//26
+			font-weight: 200;	
+		}
+		span:nth-child(3){
+			font-size: 2.250em; //36
+			font-weight: 400;	
+		}
 	}
 	
 	li{
@@ -647,13 +746,25 @@ section {
 		overflow:hidden; 
 		margin-bottom:30px;
 		
+		div.intro{
+				background: url(../img/bg_collection_video.jpg) no-repeat black;
+				height:692px;		
+				
+			.video{
+				position: relative;
+				width: 100%;
+				margin: 200px auto;
+				text-align: center;
+			}		
+		}	
+		
 		div{
 			position:relative; 
 			margin: 0px auto; 
 			width: 90%; 
 			height: auto; 
 			max-width: 401px;
-			
+					
 			.visuel{
 				width: 100%; 
 				height: auto; 
@@ -840,7 +951,7 @@ footer {
 	 * SECTION	
 	 */
 	section {
-		margin: 10px auto;
+		margin: 20px auto;
 		width: 95%;			
 	}
 
@@ -882,7 +993,9 @@ footer {
 			display:block; 
 			float:none; 
 			margin-bottom:10px;
-						
+			div.intro{
+				display: none;
+			}
 			div{
 				max-width: 280px;
 				.visuel{

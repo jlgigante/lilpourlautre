@@ -48,15 +48,7 @@ $confCollection = array(
 						
 						"collection" => array( 
 											//
-											array(
-												"type" => "collection", 
-												"saison" => "automne-hiver", 
-												"annee" => "2013", 
-												"libel" => 	array(
-																	"fr" => "Automne-hiver 2013-14",
-																	"en" => "Autumn-Winter 2013-14"
-																),
-												),
+											
 											array(
 												"type" => "collection", 
 												"saison" => "printemps-ete", 
@@ -66,6 +58,17 @@ $confCollection = array(
 																	"en" => "Spring-Summer 2013"
 																),
 												),
+											
+											array(
+												"type" => "collection", 
+												"saison" => "automne-hiver", 
+												"annee" => "2013", 
+												"libel" => 	array(
+																	"fr" => "Automne-hiver 2013-14",
+																	"en" => "Autumn-Winter 2013-14"
+																),
+												),
+											
 									  ),
 										  
 						 "pro" => array( array("saison" => "automne-hiver", "annee" => "2015"),
